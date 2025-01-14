@@ -8,14 +8,22 @@ const AppRouter = () => {
 			<Routes>
 				{/* Первый способ
 				<Route path='/' element={<MainPage />} />
-				<Route path='/about' element={<AboutPage />} /> 
+				<Route path='/about' element={<AboutPage />} />
 				*/}
 
 				{/* Второй способ
-				создаем массив из роутов при помощи Object.values пробегаясь по нему создаем список роутов 
+				создаем массив из роутов при помощи Object.values пробегаясь по нему создаем список роутов
 				*/}
 				{Object.values(routeConfig).map(({ path, element }) => (
-					<Route path={path} element={element} key={path} />
+					<Route
+						key={path}
+						path={path}
+						element={
+							<div className='page-wrapper'>
+								{element}
+							</div>
+						}
+					/>
 				))}
 			</Routes>
 		</Suspense>

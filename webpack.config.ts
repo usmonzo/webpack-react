@@ -1,9 +1,8 @@
 import path from 'path'
-import webpack from 'webpack'
 import {buildWebpackConfig} from './config/build/buldWebpackConfig'
 import {BuildEnv, BuildPaths} from './config/build/types/config'
 
-export default (env: BuildEnv) => {
+const config=(env: BuildEnv) => {
 	const paths: BuildPaths = {
 		entry: path.resolve(__dirname, 'src', 'index.tsx'),
 		build: path.resolve(__dirname, 'build'),
@@ -22,3 +21,5 @@ export default (env: BuildEnv) => {
 		port: PORT,
 	})
 }
+
+export default config
