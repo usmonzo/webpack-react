@@ -9,21 +9,21 @@ interface LangSwitcherProps {
 }
 
 const LangSwitcher = ({ className }: LangSwitcherProps) => {
-	const { t, i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
 
-	function toggle() {
-		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-	}
+    function toggle() {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+    }
 
-	return (
-		<Button
-			onClick={toggle}
-			theme={ThemeButton.CLEAR}
-			className={classNames(cls.lang_switcher_button, {}, [className])}
-		>
-			{t(`Язык`)}
-		</Button>
-	)
+    return (
+        <Button
+            onClick={toggle}
+            theme={ThemeButton.CLEAR}
+            className={classNames(cls.lang_switcher_button, {}, [className])}
+        >
+            {t(`Язык`)}
+        </Button>
+    )
 }
 
 export default LangSwitcher
