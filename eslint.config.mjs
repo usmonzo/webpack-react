@@ -1,4 +1,5 @@
 import pluginJs from "@eslint/js"
+import i18next from 'eslint-plugin-i18next'
 import pluginReact from "eslint-plugin-react"
 import globals from "globals"
 import tseslint from "typescript-eslint"
@@ -22,6 +23,7 @@ export default [
         },
         rules: {
             // ...pluginReact.configs.recommended.rules,
+            ...i18next.configs['flat/recommended'].rules,
             "react/react-in-jsx-scope": "off",
             "react/jsx-indent": [2, 4],
             "react/jsx-indent-props": [2, 4],
@@ -45,5 +47,6 @@ export default [
     },
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
+    i18next.configs['flat/recommended']
     // pluginReact.configs.flat.recommended
 ];
